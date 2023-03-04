@@ -1,0 +1,125 @@
+h5 {
+  font-family: "Oleo Script", cursive;
+  font-size: 60px;
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+li {
+  line-height: 1.2;
+  list-style: none;
+}
+
+a:link {
+  color: #3a3a3a;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #540375;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #540375;
+  text-decoration: underline;
+}
+
+.forecast {
+  background-color: rgb(255, 112, 0, 0.2);
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 0;
+  margin-top: 20px;
+}
+
+.weather-icon-main {
+  text-align: center;
+  color: #10a19d;
+  font-size: 150px;
+  text-shadow: 1px 2px 5px rgb(58, 58, 58, 0.3);
+}
+
+.weather-icon-mini {
+  display: block;
+  text-align: center;
+  color: #540375;
+  font-size: 30px;
+  padding-left: 5px;
+}
+
+.current-temp {
+  color: #540375;
+  font-family: "Jost", sans-serif;
+  font-size: 80px;
+  text-shadow: 1px 2px 5px rgb(58, 58, 58, 0.3);
+}
+
+.current-conditions {
+  color: rgb(58, 58, 58, 0.7);
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+}
+
+.current-date {
+  color: rgb(58, 58, 58, 0.7);
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.conditions-label {
+  color: #3a3a3a;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  text-align: left;
+}
+
+.far-label {
+  position: relative;
+  top: -15px;
+  color: #3a3a3a;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  text-align: left;
+}
+
+.temp-label {
+  color: #3a3a3a;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  text-align: right;
+}
+
+.search-btn {
+  background-color: #10a19d;
+  border-color: #10a19d;
+}
+
+.btn-primary:hover {
+  background-color: rgb(16, 161, 157, 0.5);
+  border-color: rgb(16, 161, 157, 0.3);
+}
+
+.update-city-btn {
+  background-color: #10a19d;
+  border-color: #10a19d;
+  padding: 15px;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(58, 58, 58, 0.5);
+  border-color: rgb(58, 58, 58, 0.3);
+}
+
+.weather-app {
+  border: 3px solid rgb(255, 112, 0, 0.2);
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 720px;
+}
