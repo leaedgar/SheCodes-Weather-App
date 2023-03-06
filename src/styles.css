@@ -50,6 +50,7 @@ a:hover {
   color: #540375;
   font-size: 30px;
   padding-left: 5px;
+  text-shadow: 1px 2px 5px rgb(58, 58, 58, 0.3);
 }
 
 .current-temp {
@@ -119,7 +120,16 @@ a:hover {
 .weather-app {
   border: 3px solid rgb(255, 112, 0, 0.2);
   padding: 15px;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   border-radius: 10px;
   max-width: 720px;
+}
+
+.code-message {
+  color: #3a3a3a;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  margin: 5px auto;
+  max-width: 720px;
+  text-shadow: 1px 2px 5px rgb(58, 58, 58, 0.1);
 }
