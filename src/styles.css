@@ -15,12 +15,7 @@ li {
   list-style: none;
 }
 
-a:link {
-  color: #3a3a3a;
-  text-decoration: none;
-}
-
-a:visited {
+a {
   color: #540375;
   text-decoration: none;
 }
@@ -28,7 +23,6 @@ a:visited {
 a:hover {
   cursor: pointer;
   color: #540375;
-  text-decoration: underline;
 }
 
 body {
@@ -131,4 +125,14 @@ body {
   font-size: 30px;
   padding-left: 5px;
   text-shadow: 1px 2px 5px rgb(58, 58, 58, 0.3);
+}
+
+.weather-temperature .active {
+  color: #3a3a3a;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+  cursor: default;
 }

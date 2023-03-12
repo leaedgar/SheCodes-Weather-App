@@ -72,17 +72,21 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
+            <div class="weather-temperature"> 
             <p>
               <span class="weather-icon-main">
                 <img src="resources/01d.png" alt="" id="icon" />
               </span>
               <span class="current-temp" id="temp-now"></span>
-              <span class="far-label" id="alt-temp"
-                ><a href="#" id="celsius-link">°C</a> |
+              <span class="far-label" id="units"
+                ><a href="#" id="celsius-link" class="active">°C</a> |
                 <a href="#" id="fahr-link">°F</a></span
               >
+              
               <!-- numbers will change depending on conditions. JS to come. -->
             </p>
+            </div>
+          </div>
             <p class="current-conditions">
               <span id="description"></span>
             </p>

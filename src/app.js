@@ -38,6 +38,8 @@ function displayWeatherConditions(response) {
   document
     .querySelector("#icon")
     .setAttribute("src", `resources/${response.data.weather[0].icon}.png`);
+
+  celsiusTemp = response.data.main.temp;
 }
 
 function searchCity(city) {
@@ -77,24 +79,29 @@ button.addEventListener("click", getCurrentLocation);
 
 //switch from cel to fahr
 
-function celsius(event) {
+function displayFahrenheit(event) {
   event.preventDefault();
-  let Cellink = document.querySelector("#temp-now");
-  Cellink.innerHTML = 9;
+  let tempElement = document.querySelector("#temp-now");
+  celLink.classList.remove("active");
+  fahrLink.classList.add("active");
+  let fahrTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrTemp);
 }
 
-function fahrenheit(event) {
+function displayCelsius(event) {
   event.preventDefault();
-  let Fahrlink = document.querySelector("#temp-now");
-  Fahrlink.innerHTML = 48;
+  let tempElement = document.querySelector("#temp-now");
+  celLink.classList.add("active");
+  fahrLink.classList.remove("active");
+  tempElement.innerHTML = Math.round(celsiusTemp);
 }
 
-// Feature 3 - temp changes on click w/ fake data eventually real
+let celsiusTemp = null;
 
-let CelLink = document.querySelector("#celsius-link");
-CelLink.addEventListener("click", celsius);
+let fahrLink = document.querySelector("#fahr-link");
+fahrLink.addEventListener("click", displayFahrenheit);
 
-let FahrLink = document.querySelector("#fahr-link");
-FahrLink.addEventListener("click", fahrenheit);
+let celLink = document.querySelector("#celsius-link");
+celLink.addEventListener("click", displayCelsius);
 
 searchCity("New York");
