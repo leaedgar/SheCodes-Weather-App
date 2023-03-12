@@ -5,7 +5,8 @@ h5 {
 
 ul {
   list-style-position: inside;
-  padding-left: 0;
+  padding: 5px 0px 0px 15px;
+  margin: 0;
 }
 
 li {
@@ -31,6 +32,7 @@ a:hover {
 
 body {
   font-family: "Jost", sans-serif;
+  color: rgb(58, 58, 58, 0.7);
 }
 
 .btn-primary:hover {
@@ -58,12 +60,13 @@ body {
 }
 
 .current-conditions {
-  color: rgb(58, 58, 58, 0.7);
   font-size: 16px;
+  text-align: left;
+  display: block;
+  text-transform: capitalize;
 }
 
 .current-date {
-  color: rgb(58, 58, 58, 0.7);
   font-size: 16px;
   font-style: italic;
 }
@@ -71,6 +74,7 @@ body {
 .current-temp {
   color: #540375;
   font-size: 80px;
+  line-height: 1;
   text-shadow: 1px 2px 5px rgb(58, 58, 58, 0.3);
 }
 
