@@ -1,15 +1,11 @@
 // updating date and time
-let dateElement = document.querySelector("#time-now");
-let currentTime = new Date();
-
-dateElement.innerHTML = formatDate(currentTime);
-
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   hours = hours <= 9 ? "0" + hours : hours;
   let minutes = date.getMinutes();
   minutes = minutes <= 9 ? "0" + minutes : minutes;
-  let dayIndex = date.getDay();
+
   let days = [
     "Sunday",
     "Monday",
@@ -19,7 +15,7 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-  let day = days[dayIndex];
+  let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -36,6 +32,12 @@ function displayWeatherConditions(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  document.querySelector("#time-now").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
+  document
+    .querySelector("#icon")
+    .setAttribute("src", `resources/${response.data.weather[0].icon}.png`);
 }
 
 function searchCity(city) {
