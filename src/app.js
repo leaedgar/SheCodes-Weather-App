@@ -25,7 +25,6 @@ function displayWeatherConditions(response) {
   document.querySelector("#temp-now").innerHTML = Math.round(
     response.data.main.temp
   );
-
   document.querySelector("#humid").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
