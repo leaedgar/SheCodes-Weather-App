@@ -25,6 +25,7 @@
   </head>
   <body>
     <!--Top title and search bar-->
+    <!--in its own container-->
     <div class="weather-app">
       <div class="container">
         <div class="row">
@@ -33,9 +34,9 @@
           </div>
         </div>
       </div>
-
+      <!-- next container, row 1, search form-->
       <div class="container">
-        <form id="search-city-form" class="mb-4">
+        <form id="search-city-form" class="mb-3">
           <div class="row">
             <div class="col-md-7">
               <input
@@ -66,32 +67,43 @@
             </div>
           </div>
         </form>
-      </div>
 
-      <!--Icon and current temp-->
-      <div class="container">
+        <!-- row 2 -->
+        <!--Icon and current temp-->
+
         <div class="row">
           <div class="col-md-8">
-            <div class="weather-temperature"> 
-            <p>
-              <span class="weather-icon-main">
-                <img src="resources/01d.png" alt="" id="icon" />
-              </span>
-              <span class="current-temp" id="temp-now"></span>
-              <span class="far-label" id="units"
-                ><a href="#" id="celsius-link" class="active">°C</a> |
-                <a href="#" id="fahr-link">°F</a></span
-              >
-              
-              <!-- numbers will change depending on conditions. JS to come. -->
-            </p>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="weather-temperature">
+                  <p>
+                    <span class="weather-icon-main">
+                      <img src="resources/01d.png" alt="" id="icon" />
+                    </span>
+                    <span class="current-temp" id="temp-now"></span>
+                    <span class="far-label" id="units"
+                      ><a href="#" id="celsius-link" class="active">°C</a> |
+                      <a href="#" id="fahr-link">°F</a></span
+                    >
+                  </p>
+                </div>
+                <div class="row">
+                  <p class="current-conditions">
+                    <span id="description"></span>
+                  </p>
+                  <p>
+                    Last updated:
+                    <span class="current-date" id="time-now"></span>
+                  </p>
+                </div>
+                <div class="row">
+                  <ul class="current-conditions">
+                    <li>Humidity: <span id="humid"></span>%</li>
+                    <li>Wind: <span id="wind"></span>km/h</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
-            <p class="current-conditions">
-              <span id="description"></span>
-            </p>
-            Last updated:
-            <p class="current-date" id="time-now"></p>
           </div>
 
           <!--5 day forecast 3 column-->
@@ -177,14 +189,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-3">
-          <ul class="current-conditions">
-            <li>Humidity: <span id="humid"></span>%</li>
-            <li>Wind: <span id="wind"></span>km/h</li>
-          </ul>
         </div>
       </div>
     </div>

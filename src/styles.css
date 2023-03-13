@@ -1,18 +1,20 @@
 h5 {
   font-family: "Oleo Script", cursive;
   font-size: 60px;
+  line-height: 1;
   text-shadow: 1px 2px 5px rgb(58, 58, 58, 0.2);
 }
 
 ul {
-  list-style-position: inside;
-  padding: 5px 0px 0px 15px;
   margin: 0;
+  padding: 0;
 }
 
 li {
   line-height: 1.2;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -58,12 +60,6 @@ body {
   text-align: left;
 }
 
-.container img {
-  width: 40%;
-  height: auto;
-  margin-bottom: 5px;
-}
-
 .current-conditions {
   font-size: 16px;
   text-align: left;
@@ -81,11 +77,11 @@ body {
 
 .current-temp {
   color: #540375;
-  font-size: 90px;
+  font-size: 75px;
   line-height: 1;
   text-shadow: 1px 2px 5px rgb(58, 58, 58, 0.3);
   position: relative;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 .far-label {
@@ -101,7 +97,6 @@ body {
   border-radius: 10px;
   padding-top: 15px;
   padding-bottom: 0;
-  margin-top: 20px;
 }
 
 .temp-label {
@@ -112,10 +107,16 @@ body {
 
 .weather-app {
   border: 3px solid rgb(255, 112, 0, 0.2);
-  padding: 15px;
+  padding: 25px;
   margin: 20px auto 0 auto;
   border-radius: 10px;
   max-width: 720px;
+}
+
+.weather-icon-main img {
+  width: 40%;
+  height: auto;
+  margin-bottom: 5px;
 }
 
 .weather-icon-mini {
