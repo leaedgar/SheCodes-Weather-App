@@ -19,38 +19,60 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#weather-forecast");
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  return days[day];
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = "";
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="row gx-1 gy-2 row-margin align-items-center">
         <div class="col-4">
-          <span class="conditions-label-day">${day}</span>
+          <span class="conditions-label-day">${formatDay(forecastDay.dt)}</span>
         </div>
         <div class="col-4">
           <span class="weather-icon-mini">
-            <img src="resources/01d.png" alt="" id="icon" />
+            <img src="resources/${
+              forecastDay.weather[0].icon
+            }.png" alt="" id="icon" />
           </span>
         </div>
         <div class="col-2">
-          <span class="conditions-label-high">3°C</span>
+          <span class="conditions-label-high">${Math.round(
+            forecastDay.temp.max
+          )}°</span>
         </div>
         <div class="col-2">
-          <span class="conditions-label-low">3°C</span>
+          <span class="conditions-label-low">${Math.round(
+            forecastDay.temp.min
+          )}°</span>
         </div>
       </div>
     `;
+    }
   });
 
   forecastHTML = forecastHTML;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "97f8e93f00107773f88eafd933ce86b7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 // replace city name by search & current temp with real data
@@ -73,6 +95,8 @@ function displayWeatherConditions(response) {
     .setAttribute("src", `resources/${response.data.weather[0].icon}.png`);
 
   celsiusTemp = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -138,5 +162,3 @@ let celLink = document.querySelector("#celsius-link");
 celLink.addEventListener("click", displayCelsius);
 
 searchCity("New York");
-
-displayForecast();
