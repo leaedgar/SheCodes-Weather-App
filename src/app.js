@@ -19,6 +19,40 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  let forecastHTML = "";
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="row gx-1 gy-2 row-margin align-items-center">
+        <div class="col-4">
+          <span class="conditions-label-day">${day}</span>
+        </div>
+        <div class="col-4">
+          <span class="weather-icon-mini">
+            <img src="resources/01d.png" alt="" id="icon" />
+          </span>
+        </div>
+        <div class="col-2">
+          <span class="conditions-label-high">3°C</span>
+        </div>
+        <div class="col-2">
+          <span class="conditions-label-low">3°C</span>
+        </div>
+      </div>
+    `;
+  });
+
+  forecastHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // replace city name by search & current temp with real data
 function displayWeatherConditions(response) {
   document.querySelector("#city").innerHTML = response.data.name;
@@ -104,3 +138,5 @@ let celLink = document.querySelector("#celsius-link");
 celLink.addEventListener("click", displayCelsius);
 
 searchCity("New York");
+
+displayForecast();
