@@ -135,13 +135,3 @@ body {
   width: 75%;
   height: auto;
 }
-
-.weather-temperature .active {
-  color: #3a3a3a;
-  cursor: default;
-}
-
-.weather-temperature .active:hover {
-  text-decoration: none;
-  cursor: default;
-}
