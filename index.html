@@ -10,10 +10,6 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,8 +20,6 @@
     <link href="src/styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <!--Top title and search bar-->
-    <!--in its own container-->
     <div class="weather-app">
       <div class="container">
         <div class="row">
@@ -34,7 +28,7 @@
           </div>
         </div>
       </div>
-      <!-- next container, row 1, search form-->
+
       <div class="container">
         <form id="search-city-form" class="mb-3">
           <div class="row">
@@ -56,7 +50,7 @@
                 id="search-button-input"
               />
             </div>
-            <div class="col-md-3 align-items-right">
+            <div class="col-md-3">
               <button
                 type="button"
                 class="btn btn-secondary shadow-sm"
@@ -68,15 +62,11 @@
           </div>
         </form>
 
-        <!-- row 2 -->
-        <!--Icon and current temp-->
-
         <div class="row">
           <div class="col-md-7">
             <div class="row">
               <div class="col-md-10">
                 <div class="weather-temperature">
-                  <p>
                     <span class="weather-icon-main">
                       <img src="resources/01d.png" alt="" id="icon" />
                     </span>
@@ -84,19 +74,12 @@
                     <span class="far-label" id="units"
                       >°C</a></span
                     >
-                  </p>
                 </div>
                 <div class="row">
-                  <p class="current-conditions">
-                    <span id="description"></span>
-                  </p>
-                  <p>
-                    Last updated:
-                    <span class="current-date" id="time-now"></span>
-                  </p>
-                </div>
-                <div class="row align-items-center">
                   <ul class="current-conditions">
+                    <li><span class ="description current-conditions" id="description"></span></li>
+                    <li>Last updated:
+                    <span class="current-date" id="time-now"></span></li>
                     <li>Humidity: <span id="humid"></span>%</li>
                     <li>Wind: <span id="wind"></span>km/h</li>
                   </ul>

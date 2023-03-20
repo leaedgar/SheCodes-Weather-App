@@ -1,4 +1,3 @@
-// updating date and time
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -75,7 +74,6 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-// replace city name by search & current temp with real data
 function displayWeatherConditions(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp-now").innerHTML = Math.round(
